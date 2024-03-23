@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b05d8b0fe08ee374eb591bde53673474, type: 3}
-  m_Name: pencil
+  m_Name: Pencil 1
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
+  itemName: pencil
+  icon: {fileID: -6418337541015408120, guid: 45f43be7c9a66044db674892487c6c49, type: 3}
   model: {fileID: 0}
   description: 
   startingCondition: 0

@@ -11,10 +11,12 @@ public class ItemDisplay : MonoBehaviour
     {
         image.sprite = newSprite;
         itemIndex = newItemIndex;
+        Debug.Log("UpdateItem");
     }
 
     public void DropFromInventory(InventoryDisplay inventoryDisplay)
     {
         inventoryDisplay.DropItem(itemIndex);
     }
+    
 }

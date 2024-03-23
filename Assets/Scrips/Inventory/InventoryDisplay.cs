@@ -5,27 +5,32 @@ using UnityEngine;
 public class InventoryDisplay : MonoBehaviour
 {
     public Inventory inventory;
-    public ItemDisplay[] slots;
+    public ItemDisplay[] slots=new ItemDisplay[4];
 
     private void Start()
     {
-        UpdateInventory();
+        
     }
 
-    void UpdateInventory()
+    public void UpdateInventory()
     {
         for (int i = 0; i < slots.Length; i++)
         {
+            Debug.Log(slots.Length);
             if (i < inventory.items.Count)
             {
                 slots[i].gameObject.SetActive(true);
-                slots[i].UpdateItemDisplay(inventory.items[i].itemType.icon, i);
+                slots[i].UpdateItemDisplay(inventory.items[i].itemData.icon, i);
+                Debug.Log("get inventory");
             }
             else
             {
                 slots[i].gameObject.SetActive(false);
+                 Debug.Log("Not get inventory");
+            
             }
         }
+        Debug.Log("Not do anything");
     }
     public void DropItem(int itemIndex)
     {
@@ -33,7 +38,7 @@ public class InventoryDisplay : MonoBehaviour
         GameObject droppedItem = new GameObject();
         droppedItem.AddComponent<Rigidbody2D>();
         droppedItem.AddComponent<InstanceItemContainer>().item = inventory.items[itemIndex];
-        GameObject itemModel = Instantiate(inventory.items[itemIndex].itemType.model, droppedItem.transform);
+        GameObject itemModel = Instantiate(inventory.items[itemIndex].itemData.model, droppedItem.transform);
 
         // Removes the item from the inventory
         inventory.items.RemoveAt(itemIndex);

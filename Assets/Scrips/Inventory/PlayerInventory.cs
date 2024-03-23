@@ -6,11 +6,12 @@ public class PlayerInventory : MonoBehaviour
 {
     public Inventory inventory;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out InstanceItemContainer foundItem))
         {
             inventory.AddItem(foundItem.TakeItem());
+            Debug.Log("Found");
         }
     }
 }
