@@ -5,9 +5,9 @@ using UnityEngine;
 
     public class InstanceItemContainer : MonoBehaviour
     {
-        public ItemInstance item;
+        public FixedInventoryItem item;
 
-        public ItemInstance TakeItem()
+        public FixedInventoryItem TakeItem()
         {
             Destroy(gameObject);
             return item;

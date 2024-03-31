@@ -2,26 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class InventoryDisplay : MonoBehaviour
 {
-    public Inventory inventory;
-    public ItemDisplay[] slots=new ItemDisplay[4];
+    public DynamicInventory dynamicInventory;
+    public ItemDisplay[] slots = new ItemDisplay[4];
 
     private void Start()
     {
-        
+        dynamicInventory.items.Clear();
+        // UpdateInventory();
     }
 
-    public void UpdateInventory()
+   public void UpdateInventory()
     {
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < 4 ; i++)
         {
-            Debug.Log(slots.Length);
-            if (i < inventory.items.Count)
+            Debug.Log("Enter loop");
+            if (i < dynamicInventory.items.Count)
             {
-                slots[i].gameObject.SetActive(true);
-                slots[i].UpdateItemDisplay(inventory.items[i].itemData.icon, i);
                 Debug.Log("get inventory");
+                slots[i].gameObject.SetActive(true);
+                slots[i].UpdateItemDisplay(dynamicInventory.items[i].icon, i);
             }
             else
             {
@@ -37,11 +39,11 @@ public class InventoryDisplay : MonoBehaviour
         // Creates a new object and gives it the item data
         GameObject droppedItem = new GameObject();
         droppedItem.AddComponent<Rigidbody2D>();
-        droppedItem.AddComponent<InstanceItemContainer>().item = inventory.items[itemIndex];
-        GameObject itemModel = Instantiate(inventory.items[itemIndex].itemData.model, droppedItem.transform);
+        droppedItem.AddComponent<InstanceItemContainer>().item = dynamicInventory.items[itemIndex];
+        GameObject itemModel = Instantiate(dynamicInventory.items[itemIndex].model, droppedItem.transform);
 
         // Removes the item from the inventory
-        inventory.items.RemoveAt(itemIndex);
+        dynamicInventory.items.RemoveAt(itemIndex);
 
         // Updates the inventory again
         UpdateInventory();

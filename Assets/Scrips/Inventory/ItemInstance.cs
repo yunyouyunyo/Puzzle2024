@@ -6,21 +6,18 @@ using UnityEngine;
 [System.Serializable]
 public class ItemInstance
 {
-    public ItemData itemData;
-    public int condition;
+    public FixedInventoryItem itemType;
     // not sure
     // public ItemData newItemType;
     // public List<ItemInstance> items = new();
-    // void Start()
-    // {
-    //     items.Add(new ItemInstance(newItemType));
-    // }
+    void Start()
+    {
+        
+    }
     // not sure
     
-    public ItemInstance(ItemData itemdata)
+    public ItemInstance(FixedInventoryItem fixedInventoryItem)
     {
-        itemData = itemdata;
-        condition = itemdata.startingCondition;
-
+        itemType = fixedInventoryItem;
     }
 }

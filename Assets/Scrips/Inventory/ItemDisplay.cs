@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using UnityEditor.Recorder;
 using UnityEngine;
 using UnityEngine.UI;
 public class ItemDisplay : MonoBehaviour
@@ -7,11 +9,12 @@ public class ItemDisplay : MonoBehaviour
     public int itemIndex;
     public Image image;
 
-    public void UpdateItemDisplay(Sprite newSprite, int newItemIndex)
+    public void UpdateItemDisplay(Sprite newImage, int newItemIndex)
     {
-        image.sprite = newSprite;
-        itemIndex = newItemIndex;
-        Debug.Log("UpdateItem");
+        
+            Debug.Log("UpdateItem");
+            image.sprite = newImage;
+            itemIndex = newItemIndex;
     }
 
     public void DropFromInventory(InventoryDisplay inventoryDisplay)

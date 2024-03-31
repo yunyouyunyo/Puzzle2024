@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public Inventory inventory;
+    public DynamicInventory dynamicInventory;
+    public InventoryDisplay inventoryDisplay;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out InstanceItemContainer foundItem))
         {
-            inventory.AddItem(foundItem.TakeItem());
-            Debug.Log("Found");
+            FixedInventoryItem item = foundItem.TakeItem();
+            dynamicInventory.AddItem(item);
+            inventoryDisplay.UpdateInventory();
         }
     }
 }

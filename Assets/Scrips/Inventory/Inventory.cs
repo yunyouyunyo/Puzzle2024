@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<ItemInstance> items = new();
-    public InventoryDisplay inventoryDisplay;
 
-    public void AddItem(ItemInstance itemToAdd)
+    public List<FixedInventoryItem> items = new();
+    public InventoryDisplay inventoryDisplay;
+    public void AddItem(FixedInventoryItem itemToAdd)
     {
         items.Add(itemToAdd);
         Debug.Log("add");
         inventoryDisplay.UpdateInventory();
+
     }
 
-    public void RemoveItem(ItemInstance itemToRemove)
+    public void RemoveItem(FixedInventoryItem itemToRemove)
     {
         items.Remove(itemToRemove);
     }

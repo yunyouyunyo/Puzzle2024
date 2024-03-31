@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23721086f04557c4b89d107ace009c50, type: 3}
+  m_Name: Fixed_coffee
+  m_EditorClassIdentifier: 
+  hasItem: 0
+  itemName: coffee
+  model: {fileID: 885487325610537985, guid: 9b21832f23287ab46a67dbd365864bc5, type: 3}
+  icon: {fileID: 1366570683238143911, guid: f7c8927464d3ccb458d4cc68aaf1a74d, type: 3}
+  description: 

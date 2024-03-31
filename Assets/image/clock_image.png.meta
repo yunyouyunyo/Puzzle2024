@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 45f43be7c9a66044db674892487c6c49
+guid: 538d468bff39b564d97b40523e5f62cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6418337541015408120
-    second: pencil_0
+      213: 8581363780399802525
+    second: clock_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -134,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pencil_0
+      name: clock_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 23
         width: 512
-        height: 512
+        height: 466
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,8 +148,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 802f833230c7de6a0800000000000000
-      internalID: -6418337541015408120
+      spriteID: d98222b64e0271770800000000000000
+      internalID: 8581363780399802525
       vertices: []
       indices: 
       edges: []
@@ -165,7 +165,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pencil_0: -6418337541015408120
+      clock_0: 8581363780399802525
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
