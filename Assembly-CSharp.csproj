@@ -78,6 +78,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Scrips\Inventory\ItemDisplay.cs" />
     <Compile Include="Assets\Scrips\TitleScreenController.cs" />
+    <Compile Include="Assets\Scrips\Lock\SimpleLock.cs" />
     <Compile Include="Assets\Scrips\PlayerPrefsSetValue.cs" />
     <Compile Include="Assets\Scrips\PlayerControll.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
