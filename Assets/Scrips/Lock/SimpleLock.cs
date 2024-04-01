@@ -13,8 +13,12 @@ public class SimpleLock : MonoBehaviour
     public string[] LockCharacterChoices;
     public int[] _lockCharacterNumber;
     private string _insertedPassword;
+    public Sprite UnlockSprite;
+    public SpriteRenderer spriteRenderer;
     void Start()
     {
+        spriteRenderer=gameObject.GetComponent<SpriteRenderer>();
+        LockCanvas.SetActive(false);
         _lockCharacterNumber = new int[Password.Length];
         UpdateUI();
     }
@@ -44,6 +48,7 @@ public class SimpleLock : MonoBehaviour
     public void Unlock()
     {
         //Do Unlock thing
+       spriteRenderer.sprite = UnlockSprite;
         Debug.Log("Unlocked");
         Interactable = false;
         StopInteract();
