@@ -16,4 +16,5 @@ MonoBehaviour:
   itemName: clock
   model: {fileID: 2057615254173272395, guid: 79b85b62889e24c449c8941435e72cfa, type: 3}
   icon: {fileID: 8581363780399802525, guid: 538d468bff39b564d97b40523e5f62cc, type: 3}
+  index: 0
   description: 

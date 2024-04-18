@@ -16,4 +16,5 @@ MonoBehaviour:
   itemName: coffee
   model: {fileID: 885487325610537985, guid: 9b21832f23287ab46a67dbd365864bc5, type: 3}
   icon: {fileID: 1366570683238143911, guid: f7c8927464d3ccb458d4cc68aaf1a74d, type: 3}
+  index: 1
   description: 

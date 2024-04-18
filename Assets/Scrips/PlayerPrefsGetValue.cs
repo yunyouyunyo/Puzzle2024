@@ -15,6 +15,6 @@ public class PlayerPrefsGetValue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Player Hp : "+playerHp);
+        // Debug.Log("Player Hp : "+playerHp);
     }
 }

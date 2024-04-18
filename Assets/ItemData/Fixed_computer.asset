@@ -16,4 +16,5 @@ MonoBehaviour:
   itemName: computer
   model: {fileID: 3433372080888415715, guid: 006b3d773f7100e47a78598cd9e65c4a, type: 3}
   icon: {fileID: 1152356169552002576, guid: 2c51df3e57934f54b80f0e4ce0eeedcc, type: 3}
+  index: 2
   description: 

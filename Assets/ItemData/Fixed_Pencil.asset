@@ -16,4 +16,5 @@ MonoBehaviour:
   itemName: Pencil
   model: {fileID: 6677124379213818721, guid: 3a4ee3ef6563ea245a3f2dad4afd3c56, type: 3}
   icon: {fileID: -6418337541015408120, guid: 45f43be7c9a66044db674892487c6c49, type: 3}
+  index: 3
   description: 

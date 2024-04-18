@@ -1,51 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public class InventoryDisplay : MonoBehaviour
 {
+
     public DynamicInventory dynamicInventory;
     public ItemDisplay[] slots = new ItemDisplay[4];
+    public DropItem dropItem;
+    private bool isSelected = false;
+    public Sprite nullBlock;
 
+    //temp
+    public static InventoryDisplay Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    //temp
     private void Start()
     {
         dynamicInventory.items.Clear();
         // UpdateInventory();
     }
 
-   public void UpdateInventory()
+    public void UpdateInventory()
     {
-        for (int i = 0; i < 4 ; i++)
+        for (int i = 0; i < 4; i++)
         {
             Debug.Log("Enter loop");
             if (i < dynamicInventory.items.Count)
             {
                 Debug.Log("get inventory");
                 slots[i].gameObject.SetActive(true);
-                slots[i].UpdateItemDisplay(dynamicInventory.items[i].icon, i);
+                slots[i].UpdateItemDisplay(dynamicInventory.items[i].icon,dynamicInventory.items[i].index);
             }
             else
             {
-                slots[i].gameObject.SetActive(false);
-                 Debug.Log("Not get inventory");
-            
+                // slots[i].gameObject.SetActive(false);
+                Debug.Log("Not get inventory");
+
             }
         }
         Debug.Log("Not do anything");
     }
-    public void DropItem(int itemIndex)
+    
+    public void DropItem(int dropItemIndex)
     {
-        // Creates a new object and gives it the item data
-        GameObject droppedItem = new GameObject();
-        droppedItem.AddComponent<Rigidbody2D>();
-        droppedItem.AddComponent<InstanceItemContainer>().item = dynamicInventory.items[itemIndex];
-        GameObject itemModel = Instantiate(dynamicInventory.items[itemIndex].model, droppedItem.transform);
-
-        // Removes the item from the inventory
-        dynamicInventory.items.RemoveAt(itemIndex);
-
-        // Updates the inventory again
-        UpdateInventory();
+        for (int i = 0; i < 4; i++)
+        {
+            if (slots[i].itemIndex == dropItemIndex)
+            {
+                Debug.Log("CheckDropItem");
+                slots[i].DropFromInventory(nullBlock);
+            }
+        }
+        // UpdateInventory();
     }
+
+
 }

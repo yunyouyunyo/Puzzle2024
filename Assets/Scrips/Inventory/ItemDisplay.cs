@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using UnityEditor.Recorder;
 using UnityEngine;
 using UnityEngine.UI;
 public class ItemDisplay : MonoBehaviour
 {
     public int itemIndex;
+    DropItem dropItem;
     public Image image;
 
     public void UpdateItemDisplay(Sprite newImage, int newItemIndex)
@@ -15,11 +12,15 @@ public class ItemDisplay : MonoBehaviour
             Debug.Log("UpdateItem");
             image.sprite = newImage;
             itemIndex = newItemIndex;
+            dropItem.itemIndex = newItemIndex;
     }
 
-    public void DropFromInventory(InventoryDisplay inventoryDisplay)
+    public void DropFromInventory(Sprite block)
     {
-        inventoryDisplay.DropItem(itemIndex);
+        
+        image.sprite = block;
+        Debug.Log("Drop finish");
+        // inventoryDisplay.DropItem(itemIndex);
     }
     
 }

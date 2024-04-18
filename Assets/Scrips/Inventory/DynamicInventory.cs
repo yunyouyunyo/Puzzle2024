@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//Serialized
 [CreateAssetMenu]
 public class DynamicInventory : ScriptableObject
 {
     public int maxItems = 4; 
+    //static list
     public List<FixedInventoryItem> items = new();
 
     public void Start(){
@@ -36,5 +37,9 @@ public class DynamicInventory : ScriptableObject
 
         Debug.Log("No space in the inventory");
         return false;
+    }
+    public void RemoveItem(FixedInventoryItem itemToRemove)
+    {
+        items.Remove(itemToRemove);
     }
 }
